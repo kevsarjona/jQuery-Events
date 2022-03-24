@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Click Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    p{
+        padding: 20px;
+        font: 20px sans-serif;
+        background: orange;
+    }
+  
+  	.text{
+      background: orange;
+      font: 20px sans-serif;
+  	}
+</style>
+  
+  
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).slideUp();
+    });
+  
+   $(".text").click(function(){
+        $(this).slideUp();
+    });
+});
+</script>
+</head>
+  
+  
+<body>
+    <p>Haz click en mi y desaparezco</p>
+    <p>Haz click en mi y desaparezco</p>
+    <p>Haz click en mi y desaparezco</p>
+  
+  	<div class="text">
+      Holaaaa
+  	
+  	</div>
+</body>
+  
+</html>
