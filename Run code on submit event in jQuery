@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Form Submit Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    .error{
+        color: red;
+      	font: 20px sans-serif;
+    }
+</style>
+  
+<script>
+$(document).ready(function(){
+    $("form").submit(function(event){
+        var regex = /^[a-zA-Z]+$/;
+        var currentValue = $("#firstName").val();
+        if(regex.test(currentValue) == false){
+            $("#resultado").html('<p class="error">Vuelva intentar</p>').show().fadeOut(1000);
+            // Preventing form submission
+            event.preventDefault();
+        }
+    });
+});
+</script>
+</head>
+  
+<body>
+    <p><strong>Nota:</strong> Si introduce mal su usuario le marcara error.</p>
+    <form action="/examples/html/action.php" method="post" id="users">
+        <label for="firstName">Usuario:</label>
+        <input type="text" name="first-name" id="firstName">
+        <input type="submit" value="Enviar">
+        <div id="resultado"></div>
+    </form>    
+</body>
+  
+</html>
