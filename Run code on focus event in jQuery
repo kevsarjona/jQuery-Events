@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Focus Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    label{
+        display: block;
+        margin: 15px 10px;
+      	font: 20px sans-serif;   
+    }
+    label span{
+        display: none;
+      	color: red;
+    }
+  
+  	input{
+      background: yellow;
+
+  	}
+  
+  
+      
+</style>
+  
+<script>
+$(document).ready(function(){
+    $("input").focus(function(){
+        $(this).next("span").show().fadeOut("quick");
+    });
+   
+});
+</script>
+</head>
+  
+<body>
+    <form>
+        <label>Email: <input type="text"> <span>Inserte su email</span></label>
+        <label>Password: <input type="password"> <span>Introduzca su password</span></label>
+        <label><input type="submit" value="Sign In"> <span>Enter</span></label>
+    </form>
+    <p><strong>Nota:</strong> Presione sobre cada caja de texto</p>
+</body>
+  
+</html>
