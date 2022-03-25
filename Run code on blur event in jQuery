@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Blur Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    label{
+        display: block;
+        margin: 15px 0;
+      	font: 15px sans-serif;
+    }
+    label span{
+        display: none;
+      	color: purple;
+    }
+  
+  	
+</style>
+  
+<script>
+$(document).ready(function(){
+    $("input").blur(function(){
+        $(this).next("span").show().fadeOut("slow");
+        $('input[type="text"]').css("background", "gray");
+      	$('input[type="password"]').css("background", "gray");
+      	$('input[type="submit"]').css("background", "yellow");
+     
+    });
+  
+});
+</script>
+</head>
+  
+<body>
+    <form>
+        <label>Email: <input type="text"> <span>blur fire</span></label>
+        <label>Password: <input type="password"> <span>blur fire</span></label>
+        <label><input type="submit" value="Inicia Sesion"> <span>blur fire</span></label>
+    </form>
+    <p><strong>Nota:</strong> Clickea en donde gustes de las cajas de texto y mira.</p>
+</body>
+  
+</html>
