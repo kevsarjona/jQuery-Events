@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Keydown Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    p{
+        padding: 10px;
+        background: lightgreen;
+        display: none;
+    }
+    div{
+        margin: 20px 20px;
+      	font: 20px sans-serif;
+    }
+  
+  	input{
+      padding: 15px 15px;
+      background: lightblue;
+  	}
+</style>
+  
+<script>
+$(document).ready(function(){
+    var i = 0;
+    $('input[type="text"]').keydown(function(){
+        $("span").text(i += 1);
+        $("p").show().fadeOut();
+    });
+});
+</script>
+</head>
+  
+<body>
+    <input type="text">
+    <div>Keydown: <span>0</span></div>
+	<div><strong>Nota:</strong> Introduzca texto dentro de la caja y observe</div>
+    <p>Keydown press.</p>
+</body>
+  
+</html>
