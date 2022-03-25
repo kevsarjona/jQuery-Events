@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Keyup Event in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+    p{
+        padding: 10px;
+        background: purple;
+        display: none;
+    }
+    div{
+        margin: 20px 20px;
+      	font: 20px sans-serif;
+    }
+  
+  	input{
+      background: yellow;
+  	}
+  
+</style>
+<script>
+$(document).ready(function(){
+    var i = 0;
+    $('input[type="text"]').keyup(function(){
+        $("span").text(i += 1);
+        $("p").show().fadeOut();
+    });
+});
+</script>
+</head>
+<body>
+    <input type="text">
+  	<input type="submit">
+    <div>Keyup: <span>0</span></div>
+	<div><strong>Nota:</strong> Introduce algo y observa</div>
+    <p>Keyup is triggered.</p>
+</body>
+</html>
